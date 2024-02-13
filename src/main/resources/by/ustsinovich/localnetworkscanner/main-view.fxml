@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ustsinovich.localnetworkscanner.controller.MainController">
+    <ToolBar layoutY="600.0" prefHeight="40.0" prefWidth="640.0">
+        <Label text="Name:" />
+        <TextField editable="false" prefHeight="25.0" prefWidth="120.0" fx:id="tfName"/>
+        <Label text="MAC-address:" />
+        <TextField editable="false" prefHeight="25.0" prefWidth="150.0" fx:id="tfMac" />
+        <Label text="IP-address:" />
+        <TextField editable="false" prefHeight="25.0" prefWidth="150.0" fx:id="tfIp"/>
+    </ToolBar>
+    <ToolBar prefHeight="40.0" prefWidth="640.0">
+        <Button mnemonicParsing="false" onAction="#onBtnRunAction" text="Run!" />
+    </ToolBar>
+    <TableView fx:id="tvInfo" layoutY="40.0" prefHeight="560.0" prefWidth="640.0">
+        <columns>
+            <TableColumn fx:id="macColumn" prefWidth="160.0" text="MAC-address">
+                <cellValueFactory>
+                    <PropertyValueFactory property="mac" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nameColumn" prefWidth="480.0" text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</Pane>
